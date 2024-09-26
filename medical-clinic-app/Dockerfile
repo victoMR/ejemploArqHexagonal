@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+RUN apt-get update && apt-get install -y docker-compose
+
 EXPOSE 3000
 
-CMD ["node", "index.js"]
+CMD ["docker-compose", "up"]
